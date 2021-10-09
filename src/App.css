@@ -50,12 +50,27 @@ body {
   width: 90%;
 }
 
+.form-wrapper {
+  display: flex;
+  align-items:center;
+  justify-content:space-evenly;
+  border: 1px solid #2c0136;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+img {
+  width: 75%;
+  height: 150px;
+  padding: 20px;
+}
+
 form {
   border: 1px solid #2c0136;
   border-radius: 10px;
   width: 100%;
   padding: 20px;
-  margin-bottom: 5px;
+  margin: 5px;
 }
 
 .form-group {
@@ -65,6 +80,7 @@ form {
 }
 
 label {
+  font-size: 20px;
   font-weight: 600;
   padding: 10px;
 }
@@ -78,6 +94,14 @@ label {
   border-radius: 10px;
   width: 100%;
   padding: 20px;
+  margin: 5px;
+}
+
+#fname, #lname, #email, #pass {
+  border: 1px solid #2c0136;
+  border-radius: 10px;
+  padding: 5px 10px 5px 5px;
+  margin: 5px;
 }
 
 .btn {
@@ -89,4 +113,23 @@ label {
 .btn:hover {
   color: #2c0136;
   background-color: #e4a6e4;
+}
+
+@media only screen and (max-width: 870px) {
+  img {
+    display: none;
+  }
+  form {
+    border: none;
+  }
+  label {
+    font-size: 16px;
+  }
+  .form-group {
+    align-items: center;
+    flex-direction: column;
+  }
+  .userData {
+    align-items: center;
+  }
 }

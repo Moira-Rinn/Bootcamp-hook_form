@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SMCR from '../imgs/SMCR.png';
 
 const RegForm = (props) => {
 
@@ -22,61 +23,62 @@ const RegForm = (props) => {
 
   return (
     <div className="user">
-
-      <form onSubmit={newUser}>
-        <div className='form-group'>
-          <label>First Name: </label>
+      <div className='form-wrapper'>
+        <img src={SMCR} alt="S.M.C.R. Logo"></img>
+        <form onSubmit={newUser}>
+          <div className='form-group'>
+            <label>First Name: </label>
+            <input
+              className='form-control-sm'
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </div>
+          <div className='form-group'>
+            <label>Last Name: </label>
+            <input
+              className='form-control-sm'
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
+          <div className='form-group'>
+            <label>Email Address: </label>
+            <input
+              className='form-control-sm'
+              type="text"
+              value={userEmail}
+              onChange={(e) => setUserEmail(e.target.value)} />
+          </div>
+          <div className='form-group'>
+            <label>Password: </label>
+            <input
+              className='form-control-sm'
+              type="text"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className='form-group'>
+            <label>Confirm Password: </label>
+            <input
+              className='form-control-sm'
+              type="text"
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
+            />
+          </div>
           <input
-            className='form-control-sm'
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            className='btn btn-light btn-outline-dark'
+            type="submit"
+            value="Create User"
           />
-        </div>
-        <div className='form-group'>
-          <label>Last Name: </label>
-          <input
-            className='form-control-sm'
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </div>
-        <div className='form-group'>
-          <label>Email Address: </label>
-          <input
-            className='form-control-sm'
-            type="text"
-            value={userEmail}
-            onChange={(e) => setUserEmail(e.target.value)} />
-        </div>
-        <div className='form-group'>
-          <label>Password: </label>
-          <input
-            className='form-control-sm'
-            type="text"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className='form-group'>
-          <label>Confirm Password: </label>
-          <input
-            className='form-control-sm'
-            type="text"
-            value={password2}
-            onChange={(e) => setPassword2(e.target.value)}
-          />
-        </div>
-        <input
-          className='btn btn-light btn-outline-dark'
-          type="submit"
-          value="Create User"
-        />
-      </form>
-
+        </form>
+      </div>
       <div className='userData'>
-        <h2>You Entered:</h2>
+        <h2>You're Entering: </h2>
         <h4 id='fname'>First Name: {firstName}</h4>
         <h4 id='lname'>Last Name: {lastName}</h4>
         <h4 id='email'>Email: {userEmail}</h4>
